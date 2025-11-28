@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="sm_rere_daisha" exec="sm_rere_daisha_node" name="sm_rere_daisha" output="screen">
+    <param from="$(find-pkg-share sm_rere_daisha)/config/sm_rere_daisha_config.yaml" />
+  </node>
+</launch>
