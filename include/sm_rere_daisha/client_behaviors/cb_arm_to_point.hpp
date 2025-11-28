@@ -36,6 +36,7 @@ public:
         (void)future;
     }
 private:
+    geometry_msgs::msg::PointStamped target_;
 };
-}
-}
+}   // namespace cb_arm_to_point
+}   // namespace sm_rere_daisha
