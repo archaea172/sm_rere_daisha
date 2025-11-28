@@ -20,6 +20,9 @@
 
 #include "smacc2/smacc.hpp"
 
+#include "sm_rere_daisha/states/st_init.hpp"
+#include "sm_rere_daisha/states/st_catch_ball.hpp"
+
 // ORTHOGONALS
 #include "sm_rere_daisha/orthogonals/or_timer.hpp"
 #include "sm_rere_daisha/orthogonals/or_arm.hpp"
@@ -46,6 +49,3 @@ struct SmRereDaisha
 };
 
 } // namespace sm_rere_daisha
-
-#include "sm_rere_daisha/states/st_init.hpp"
-#include "sm_rere_daisha/states/st_catch_ball.hpp"
