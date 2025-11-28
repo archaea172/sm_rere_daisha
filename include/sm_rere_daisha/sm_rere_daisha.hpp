@@ -19,23 +19,19 @@
 #include <string>
 
 #include "smacc2/smacc.hpp"
+#include "sm_rere_daisha/states/st_init.hpp"
+#include "sm_rere_daisha/states/st_catch_ball.hpp"
 
 // ORTHOGONALS
 #include "sm_rere_daisha/orthogonals/or_timer.hpp"
+#include "sm_rere_daisha/orthogonals/or_arm.hpp"
 
 namespace sm_rere_daisha
 {
-// SMACC2 clases
-using sm_rere_daisha::OrTimer;  // This is example variable - feel free to delete it.
-
-//STATES
-struct State1;
-struct State2;
-
 //--------------------------------------------------------------------
 //STATE_MACHINE
 struct SmRereDaisha
-: public smacc2::SmaccStateMachineBase<SmRereDaisha, State1>
+: public smacc2::SmaccStateMachineBase<SmRereDaisha, StInit>
 {
   using SmaccStateMachineBase::SmaccStateMachineBase;
 
@@ -43,6 +39,7 @@ struct SmRereDaisha
   {
     // START: Example code - change or delete as needed
     this->createOrthogonal<OrTimer>();
+    this->createOrthogonal<OrArm>();
     // Use Blackboard to store global state-machine data - example - feel free to delete it.
     setGlobalSMData(
       "output_message_note", std::string("{I am very cool smacc2 SM called 'sm_rere_daisha'}"));
@@ -50,8 +47,4 @@ struct SmRereDaisha
   }
 };
 
-}  // namespace sm_rere_daisha
-
-//STATES
-#include "states/st_state_1.hpp"
-#include "states/st_state_2.hpp"
+} // namespace sm_rere_daisha
