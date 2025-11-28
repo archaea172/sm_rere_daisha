@@ -1,7 +1,7 @@
 #pragma once
 
 #include "rclcpp/rclcpp.hpp"
-#include "rere_daisha_msgs/srv/ArmPos.hpp"
+#include "rere_daisha_msgs/srv/arm_pos.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
 #include "smacc2/smacc_client.hpp"
 

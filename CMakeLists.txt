@@ -13,7 +13,6 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(cl_ros2_timer REQUIRED)
-find_package(cb_timer_countdown_once REQUIRED)
 find_package(smacc2 REQUIRED)
 find_package(Boost COMPONENTS thread REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -22,7 +21,6 @@ find_package(geometry_msgs REQUIRED)
 
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   cl_ros2_timer
-  cb_timer_countdown_once
   smacc2
   std_msgs
   rere_daisha_msgs
