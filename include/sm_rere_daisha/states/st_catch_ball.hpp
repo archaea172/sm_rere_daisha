@@ -14,7 +14,7 @@ struct StCatchBall : smacc2::SmaccState<StCatchBall, SmRereDaisha>
 {
     using SmaccState::SmaccState;
 
-    using reactions = mpl::list<>;
+    typedef boost::mpl::list<> reactions;
 
     static void staticConfigure()
     {

@@ -15,7 +15,7 @@ public:
     using ArmPos = rere_daisha_msgs::srv::ArmPos;
     ClArmControl() {}
 
-    void OnInitialize() override
+    void onInitialize() override
     {
         auto node = getNode();
         client_ = node->create_client<ArmPos>("arm_pos");
