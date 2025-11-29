@@ -17,7 +17,7 @@ public:
 
     void onInitialize() override
     {
-        auto node = getNode();
+        auto node = this->getNode();
         client_ = node->create_client<ArmPos>("arm_pos");
     }
 

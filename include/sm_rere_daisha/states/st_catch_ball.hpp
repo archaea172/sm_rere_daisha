@@ -1,36 +1,35 @@
+// include/sm_rere_daisha/states/st_catch_ball.hpp
 #pragma once
 
-#include "smacc2/smacc.hpp"
-#include "sm_rere_daisha/sm_rere_daisha.hpp"
-
-#include "sm_rere_daisha/orthogonals/or_arm.hpp"
-#include "sm_rere_daisha/client_behaviors/cb_arm_to_point.hpp"
+#include <smacc2/smacc.hpp>
+#include <boost/mpl/list.hpp>
 
 namespace sm_rere_daisha
 {
-namespace st_catch_ball
-{
+
+struct SmRereDaisha;
+
+// ボールをキャッチする状態（今はログだけ）
 struct StCatchBall : smacc2::SmaccState<StCatchBall, SmRereDaisha>
 {
-    using SmaccState::SmaccState;
+  using SmaccState::SmaccState;
+  using reactions = boost::mpl::list<>;  // まだ遷移はなし
 
-    typedef boost::mpl::list<> reactions;
+  static void staticConfigure()
+  {
+    // 後で OrArm / CbArmToPoint をつなぎたいときにここで:
+    // configure_orthogonal<OrArm, cb_arm_to_point::CbArmToPoint<StCatchBall, OrArm>>();
+  }
 
-    static void staticConfigure()
-    {
-        configure_orthogonal<OrArm, cb_arm_to_point::CbArmToPoint<StCatchBall, OrArm>();
-    }
+  void onEntry()
+  {
+    RCLCPP_INFO(this->getLogger(), "[StCatchBall] Entry");
+  }
 
-    void onEntry()
-    {
-        RCLCPP_INFO(getLogger(), "[StSearchBall] Entry");
-    }
-
-    void onExit()
-    {
-        RCLCPP_INFO(getLogger(), "[StSearchBall] Exit");
-    }
+  void onExit()
+  {
+    RCLCPP_INFO(this->getLogger(), "[StCatchBall] Exit");
+  }
 };
 
-}   // namespace st_catch_ball
-}   // namespace sm_rere_daisha
+}  // namespace sm_rere_daisha
